@@ -1,1 +1,695 @@
 # VarrenyamConsultants
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microfinance: A Varrenyam Consultants Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #1A202C;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-card {
+            background-color: #FFFFFF;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #004E89;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            color: #4A5568;
+            margin-top: 0.5rem;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #002962;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #4A5568;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+            padding-left: 2rem;
+            border-left: 2px solid #D1D5DB;
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.5rem;
+            top: 0;
+            height: 1rem;
+            width: 1rem;
+            background-color: #004E89;
+            border-radius: 9999px;
+            border: 2px solid #F8F9FA;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-[#002962]">
+                Varrenyam Consultants
+            </div>
+            <div class="text-xl font-semibold text-[#004E89]">
+                Microfinance Sector Analysis
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="hero" class="text-center mb-20">
+            <h1 class="text-4xl md:text-6xl font-black text-[#002962] mb-4">The Microfinance Revolution</h1>
+            <p class="text-xl md:text-2xl text-[#4A5568] max-w-4xl mx-auto">From Grassroots Lending to a Digitally-Powered Global Market</p>
+        </section>
+
+        <section id="global-need" class="mb-20">
+            <h2 class="section-title">The Unmet Need: A Global Snapshot of Financial Exclusion</h2>
+            <p class="section-subtitle">Financial exclusion remains a critical barrier to global economic development, impacting billions of individuals and millions of small businesses. Microfinance directly addresses this gap, providing essential services to underserved populations.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="kpi-card">
+                    <div class="kpi-value">2B</div>
+                    <div class="kpi-label">People Lacking Access to Formal Financial Services</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">200M</div>
+                    <div class="kpi-label">MSMEs in Emerging Economies Without Access to Credit</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">$2.2T</div>
+                    <div class="kpi-label">MSME Credit Gap in Emerging Economies</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">55%</div>
+                    <div class="kpi-label">of the World's Unbanked are Women</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mfi-landscape" class="mb-20">
+            <h2 class="section-title">The Global MFI Landscape</h2>
+            <p class="section-subtitle">The microfinance sector is composed of diverse institutions, each playing a unique role. NGOs excel in social outreach, while microfinance banks command the largest share of assets, highlighting a fundamental split in focus between welfare and commercial viability.</p>
+            <div class="card">
+                <h3 class="text-xl font-bold text-center mb-4">Institutional Breakdown: Assets vs. Borrower Reach (2002-2004 Sample)</h3>
+                <p class="text-center text-gray-600 mb-6">This chart illustrates the distribution of assets, total borrowers, and female borrowers among different types of microfinance institutions. NGOs, while holding fewer assets, serve a disproportionately large number of total and female borrowers, underscoring their social mission focus.</p>
+                <div class="chart-container h-[450px] md:h-[500px] max-h-[550px]">
+                    <canvas id="mfiLandscapeChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="debate" class="mb-20">
+            <h2 class="section-title">A Tale of Two Philosophies: The Great Microfinance Debate</h2>
+            <p class="section-subtitle">The industry is shaped by a central debate: should the focus be on building large-scale, financially self-sufficient institutions or on directly alleviating poverty through subsidized, welfare-focused efforts?</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card border-t-4 border-[#004E89]">
+                    <h3 class="text-2xl font-bold text-[#004E89] mb-4">The Institutionist View</h3>
+                    <p class="mb-4 text-gray-700">Emphasizes financial self-sufficiency and scaling up to reach the maximum number of clients (breadth over depth).</p>
+                    <ul class="space-y-2 list-disc list-inside text-gray-600">
+                        <li><strong>Primary Goal:</strong> Financial system deepening.</li>
+                        <li><strong>Key Metric:</strong> Number of clients served.</li>
+                        <li><strong>Stance on Subsidies:</strong> Avoided; seen as undermining efficiency.</li>
+                        <li><strong>Core Belief:</strong> Competition and private capital are essential for global scale.</li>
+                        <li><strong>Proponents:</strong> World Bank, CGAP, USAID.</li>
+                    </ul>
+                </div>
+                <div class="card border-t-4 border-[#F9A620]">
+                    <h3 class="text-2xl font-bold text-[#F9A620] mb-4">The Welfarist View</h3>
+                    <p class="mb-4 text-gray-700">Prioritizes direct poverty alleviation and serving the poorest clients (depth over breadth), even if it requires subsidies.</p>
+                     <ul class="space-y-2 list-disc list-inside text-gray-600">
+                        <li><strong>Primary Goal:</strong> Direct impact on participant well-being.</li>
+                        <li><strong>Key Metric:</strong> Depth of poverty reached.</li>
+                        <li><strong>Stance on Subsidies:</strong> Accepted as necessary to serve the poorest.</li>
+                        <li><strong>Core Belief:</strong> Commercialization risks displacing the social mission.</li>
+                        <li><strong>Proponents:</strong> Grameen Bank, FINCA.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="india-focus" class="mb-20">
+            <h2 class="section-title">Deep Dive: The Indian Microfinance Market</h2>
+            <p class="section-subtitle">As a leading global market, the Indian microfinance sector has undergone significant consolidation and structural change, particularly after the 2010 Andhra Pradesh crisis. A few dominant players now shape the competitive landscape.</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-bold text-center mb-4">Market Concentration on the Rise (2005-2016)</h3>
+                    <p class="text-center text-gray-600 mb-6">The Herfindahl-Hirschman Index (HHI) shows a clear trend towards increased market concentration, especially post-2012, indicating a shift towards a less competitive, more consolidated market structure.</p>
+                    <div class="chart-container">
+                        <canvas id="indiaConcentrationChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                     <h3 class="text-xl font-bold text-center mb-4">Dominance of Banks & NBFC-MFIs</h3>
+                    <p class="text-center text-gray-600 mb-6">The market share of Banks and NBFC-MFIs has grown significantly, squeezing out other players like NGOs and cooperatives and solidifying their control over the sector's assets and loan portfolio.</p>
+                    <div class="chart-container">
+                        <canvas id="indiaMarketShareChart"></canvas>
+                    </div>
+                </div>
+                 <div class="card lg:col-span-2">
+                    <h3 class="text-xl font-bold text-center mb-4">Top 10 Indian MFIs by GLP Share (2016)</h3>
+                    <p class="text-center text-gray-600 mb-6">In 2016, the top 10 institutions controlled 95% of the total Gross Loan Portfolio (GLP). Many of these leaders have since transformed into Small Finance Banks, signaling a major trend towards commercialization.</p>
+                    <div class="chart-container h-[500px] max-h-[550px]">
+                        <canvas id="indiaTopPlayersChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="future-outlook" class="mb-20">
+            <h2 class="section-title">The Future is Digital: Projections & The AI Revolution</h2>
+            <p class="section-subtitle">The next phase of growth in financial inclusion will be driven by technology. Digital finance and AI are set to dramatically lower costs, expand reach, and increase the effectiveness of microfinance on a global scale.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="kpi-card !bg-[#002962]">
+                    <div class="kpi-value !text-white">$3.7T</div>
+                    <div class="kpi-label !text-gray-300">Potential GDP Boost in Emerging Economies by 2025</div>
+                </div>
+                <div class="kpi-card !bg-[#004E89]">
+                    <div class="kpi-value !text-white">1.6B</div>
+                    <div class="kpi-label !text-gray-300">People Gaining Financial Access via Digital Finance by 2025</div>
+                </div>
+                 <div class="kpi-card !bg-[#006BA6]">
+                    <div class="kpi-value !text-white">95M</div>
+                    <div class="kpi-label !text-gray-300">New Jobs Created in All Sectors by 2025</div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-3 card">
+                     <h3 class="text-xl font-bold text-center mb-4">The AI-Powered MFI: A New Operational Model</h3>
+                     <p class="text-center text-gray-600 mb-8">Artificial Intelligence is shifting microfinance from need-based to impact-based targeting, revolutionizing everything from credit scoring to customer service.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-[#E0E7FF] text-[#002962] rounded-lg p-3 font-bold">Data Inputs</div>
+                            <div class="flex-1 text-center text-xl font-bold text-[#004E89]">→</div>
+                            <div class="bg-[#BFDBFE] text-[#002962] rounded-lg p-3 font-bold">AI/ML Models</div>
+                             <div class="flex-1 text-center text-xl font-bold text-[#004E89]">→</div>
+                            <div class="bg-[#93C5FD] text-[#002962] rounded-lg p-3 font-bold">Optimized Outputs</div>
+                        </div>
+                        <div class="p-4 border rounded-lg">
+                            <h4 class="font-bold text-[#004E89]">1. Credit Risk Assessment</h4>
+                            <p class="text-gray-600">ML algorithms analyze diverse data (social media, utility payments) for more precise credit scores, enabling loans to previously "unbankable" individuals.</p>
+                        </div>
+                         <div class="p-4 border rounded-lg">
+                            <h4 class="font-bold text-[#004E89]">2. Fraud Detection</h4>
+                            <p class="text-gray-600">AI detects anomalies in transaction patterns in real-time to flag and mitigate suspicious activity and potential fraud.</p>
+                        </div>
+                         <div class="p-4 border rounded-lg">
+                            <h4 class="font-bold text-[#004E89]">3. "Impact-Based" Targeting</h4>
+                            <p class="text-gray-600">AI shifts focus from simply providing aid to identifying individuals predicted to gain the most from it, increasing returns on profits by up to 567% and household income by up to 1373%.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 card">
+                    <h3 class="text-xl font-bold text-center mb-4">Projected NBFC Credit Growth in India (FY23-FY25)</h3>
+                    <p class="text-center text-gray-600 mb-6">Propelled by strong macroeconomic factors and digitization, credit extended by India's NBFCs, including their vital microfinance portfolios, is projected to grow at a robust 13-15% CAGR.</p>
+                    <div class="chart-container">
+                        <canvas id="indiaNBFCGrowthChart"></canvas>
+                    </div>
+                    <div class="mt-6 text-center text-gray-700">
+                        <h4 class="font-bold text-[#004E89] mb-2">Key Assumptions for Projections:</h4>
+                        <ul class="list-disc list-inside text-sm text-left mx-auto max-w-md">
+                            <li>India's GDP reaches $7 trillion by 2030, fueling credit demand.</li>
+                            <li>Continued positive policy interventions (e.g., PMMY, CGTMSE).</li>
+                            <li>Widespread adoption of "India Stack" framework (eKYC, DigiLocker).</li>
+                            <li>Growth in co-lending models between banks and NBFCs.</li>
+                            <li>Sustained digitization leading to enhanced efficiency and credit assessment.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="history-timeline" class="mb-20">
+            <h2 class="section-title">A Brief History of Microfinance: From Informal Roots to Global Movement</h2>
+            <p class="section-subtitle">Microfinance has evolved from ancient informal lending practices to a formalized global industry, driven by the persistent need for financial access among the poor.</p>
+            <div class="card">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-lg text-[#004E89]">Ancient India: Vedic Period & Moneylenders</h3>
+                        <p class="text-gray-700 text-sm">Early forms of money-lending ('kusida') existed, indicating informal credit systems. These often involved local moneylenders providing credit to farmers and traders.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-lg text-[#004E89]">Mughal Era: Sarrafs, Shroffs & Dastawez</h3>
+                        <p class="text-gray-700 text-sm">Banking and lending became more institutionalized with figures like Sarrafs and Shroffs, popularizing 'Dastawez' (demand-payable and time-bound business loans).</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-lg text-[#004E89]">1793: British Raj & Zamindari System</h3>
+                        <p class="text-gray-700 text-sm">Formalized by the British, Zamindars acted as intermediaries, collecting revenue from peasants. This system, while a form of localized financial control, often led to exploitative usurious lending by associated moneylenders, trapping farmers in debt.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-lg text-[#004E89]">Early 1970s: Challenge to Traditional Banking</h3>
+                        <p class="text-gray-700 text-sm">Prevailing belief that serving low-income households required subsidies was challenged. Government banks often inefficiently served farmers with lax loan collection.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-lg text-[#004E89]">1976: Muhammad Yunus & Grameen Bank</h3>
+                        <p class="text-gray-700 text-sm">Yunus lent $27 to 42 stool makers in Bangladesh, demonstrating the poor's capacity for entrepreneurship. Pioneered "group lending" (joint liability) for high repayment rates without collateral, transferring agency costs to borrowers.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-lg text-[#004E89]">2006: Nobel Peace Prize for Yunus & Grameen Bank</h3>
+                        <p class="text-gray-700 text-sm">Recognized as an "important liberating force" in the struggle against poverty, validating the microfinance model on a global stage.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-lg text-[#004E89]">2007: Banco Compartamos IPO Controversy</h3>
+                        <p class="text-gray-700 text-sm">Mexican MFI's IPO and high interest rates (94% annual) sparked debate between "institutionist" (commercialization) and "welfarist" (social mission) views, highlighting the tension between profit and poverty alleviation.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-lg text-[#004E89]">2010s: Andhra Pradesh Crisis & Indian Market Consolidation</h3>
+                        <p class="text-gray-700 text-sm">Regulatory upheaval in India led to significant market concentration, with top players gaining dominant shares and many transforming into Small Finance Banks.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-lg text-[#004E89]">Present & Future: Digitalization & AI Integration</h3>
+                        <p class="text-gray-700 text-sm">Digital finance poised to reduce costs by 80-90%, reach 1.6 billion new clients by 2025. AI-driven targeting (e.g., GRFs) to optimize impact, shifting from need-based to impact-based lending, and enhancing fraud detection and credit assessment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#002962] text-white py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 Varrenyam Consultants. All rights reserved.</p>
+            <p class="text-sm mt-2">Data sourced from provided research documents (McKinsey Global Institute, KPMG, Journal of Economic Perspectives, etc.).</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const primaryBlue = '#004E89';
+            const secondaryBlue = '#006BA6';
+            const lightBlue = '#E0E7FF';
+            const accentYellow = '#F9A620';
+            const darkText = '#002962';
+            const bodyText = '#4A5568';
+            const background = '#F8F9FA';
+
+            function wrapLabel(label) {
+                if (typeof label !== 'string' || label.length <= 16) {
+                    return label;
+                }
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > 16 && currentLine !== '') {
+                        lines.push(currentLine.trim());
+                        currentLine = word + ' ';
+                    } else {
+                        currentLine += word + ' ';
+                    }
+                });
+                if (currentLine !== '') {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            }
+
+            const commonChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    legend: {
+                        labels: {
+                            font: {
+                                family: 'Inter',
+                                size: 12
+                            },
+                            color: bodyText
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            font: {
+                                family: 'Inter',
+                                size: 10
+                            },
+                            color: bodyText
+                        },
+                        grid: {
+                            color: '#E2E8F0'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                family: 'Inter',
+                                size: 10
+                            },
+                            color: bodyText
+                        },
+                        grid: {
+                            color: '#E2E8F0'
+                        }
+                    }
+                }
+            };
+
+            // MFI Landscape Chart
+            const mfiLandscapeCtx = document.getElementById('mfiLandscapeChart').getContext('2d');
+            new Chart(mfiLandscapeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['NGO', 'Microfinance Bank', 'Nonbank Financial Inst.', 'Credit Union', 'Rural Bank'].map(wrapLabel),
+                    datasets: [{
+                        label: '% of Total Assets',
+                        data: [21, 50, 19, 4, 1],
+                        backgroundColor: primaryBlue,
+                        borderColor: primaryBlue,
+                        borderWidth: 1
+                    }, {
+                        label: '% of Total Borrowers',
+                        data: [50, 25, 17, 6, 1],
+                        backgroundColor: secondaryBlue,
+                        borderColor: secondaryBlue,
+                        borderWidth: 1
+                    }, {
+                        label: '% of Female Borrowers',
+                        data: [75, 6, 16, 4, 1],
+                        backgroundColor: accentYellow,
+                        borderColor: accentYellow,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    scales: {
+                        x: {
+                            ...commonChartOptions.scales.x,
+                            stacked: false
+                        },
+                        y: {
+                            ...commonChartOptions.scales.y,
+                            stacked: false,
+                            title: {
+                                display: true,
+                                text: 'Percentage (%)',
+                                font: {
+                                    family: 'Inter',
+                                    size: 12,
+                                    weight: 'bold'
+                                },
+                                color: bodyText
+                            }
+                        }
+                    }
+                }
+            });
+
+            // India Concentration Chart
+            const indiaConcentrationCtx = document.getElementById('indiaConcentrationChart').getContext('2d');
+            new Chart(indiaConcentrationCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+                    datasets: [{
+                        label: 'HHI',
+                        data: [962.6, 618.7, 837.2, 979.3, 827.7, 764.4, 761.6, 814.5, 794.7, 1130.2, 1146.3, 1115.9],
+                        borderColor: primaryBlue,
+                        backgroundColor: primaryBlue + '30',
+                        fill: true,
+                        tension: 0.3
+                    }, {
+                        label: 'CR (10)',
+                        data: [0.75, 0.69, 0.72, 0.75, 0.76, 0.75, 0.73, 0.70, 0.70, 0.77, 0.77, 0.80],
+                        borderColor: secondaryBlue,
+                        backgroundColor: secondaryBlue + '30',
+                        fill: false,
+                        tension: 0.3
+                    }, {
+                        label: 'CR (5)',
+                        data: [0.56, 0.48, 0.56, 0.60, 0.58, 0.55, 0.54, 0.51, 0.52, 0.60, 0.63, 0.66],
+                        borderColor: accentYellow,
+                        backgroundColor: accentYellow + '30',
+                        fill: false,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    scales: {
+                        x: {
+                            ...commonChartOptions.scales.x,
+                            title: {
+                                display: true,
+                                text: 'Year',
+                                font: {
+                                    family: 'Inter',
+                                    size: 12,
+                                    weight: 'bold'
+                                },
+                                color: bodyText
+                            }
+                        },
+                        y: {
+                            ...commonChartOptions.scales.y,
+                            title: {
+                                display: true,
+                                text: 'Index Value',
+                                font: {
+                                    family: 'Inter',
+                                    size: 12,
+                                    weight: 'bold'
+                                },
+                                color: bodyText
+                            }
+                        }
+                    }
+                }
+            });
+
+            // India Market Share Chart
+            const indiaMarketShareCtx = document.getElementById('indiaMarketShareChart').getContext('2d');
+            new Chart(indiaMarketShareCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['2007', '2011', '2016'],
+                    datasets: [{
+                        label: 'Bank + NBFC-MFIs Share in Total GLP (%)',
+                        data: [76.86, 85.53, 87.24],
+                        backgroundColor: primaryBlue,
+                        borderColor: primaryBlue,
+                        borderWidth: 1
+                    }, {
+                        label: 'Rest of MFIs Share in Total GLP (%)',
+                        data: [23.14, 14.47, 12.76],
+                        backgroundColor: accentYellow,
+                        borderColor: accentYellow,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    scales: {
+                        x: {
+                            ...commonChartOptions.scales.x,
+                            stacked: true,
+                            title: {
+                                display: true,
+                                text: 'Year',
+                                font: {
+                                    family: 'Inter',
+                                    size: 12,
+                                    weight: 'bold'
+                                },
+                                color: bodyText
+                            }
+                        },
+                        y: {
+                            ...commonChartOptions.scales.y,
+                            stacked: true,
+                            title: {
+                                display: true,
+                                text: 'Percentage (%)',
+                                font: {
+                                    family: 'Inter',
+                                    size: 12,
+                                    weight: 'bold'
+                                },
+                                color: bodyText
+                            }
+                        }
+                    }
+                }
+            });
+
+            // India Top Players Chart
+            const indiaTopPlayersCtx = document.getElementById('indiaTopPlayersChart').getContext('2d');
+            new Chart(indiaTopPlayersCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'Bandhan', 'Janalakshmi', 'Bharat Financial Inclusion', 'SKDRDP', 'Ujjivan',
+                        'Equitas', 'Satin', 'Grameen Koota', 'Spandana', 'Muthoot Microfin'
+                    ].map(wrapLabel),
+                    datasets: [{
+                        label: 'GLP Share (2016)',
+                        data: [22.74, 17.98, 12.86, 8.98, 8.95, 8.18, 5.08, 4.32, 2.94, 2.75],
+                        backgroundColor: secondaryBlue,
+                        borderColor: secondaryBlue,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    indexAxis: 'y', // Horizontal bar chart
+                    scales: {
+                        x: {
+                            ...commonChartOptions.scales.x,
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'GLP Share (%)',
+                                font: {
+                                    family: 'Inter',
+                                    size: 12,
+                                    weight: 'bold'
+                                },
+                                color: bodyText
+                            }
+                        },
+                        y: {
+                            ...commonChartOptions.scales.y,
+                            title: {
+                                display: true,
+                                text: 'MFI',
+                                font: {
+                                    family: 'Inter',
+                                    size: 12,
+                                    weight: 'bold'
+                                },
+                                color: bodyText
+                            }
+                        }
+                    }
+                }
+            });
+
+            // India NBFC Growth Chart
+            const indiaNBFCGrowthCtx = document.getElementById('indiaNBFCGrowthChart').getContext('2d');
+            new Chart(indiaNBFCGrowthCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Projected NBFC Credit Growth (FY23-FY25)'],
+                    datasets: [{
+                        label: 'CAGR (%)',
+                        data: [14], // Using midpoint of 13-15%
+                        backgroundColor: primaryBlue,
+                        borderColor: primaryBlue,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    scales: {
+                        x: {
+                            ...commonChartOptions.scales.x,
+                            grid: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            ...commonChartOptions.scales.y,
+                            beginAtZero: true,
+                            max: 20,
+                            title: {
+                                display: true,
+                                text: 'CAGR (%)',
+                                font: {
+                                    family: 'Inter',
+                                    size: 12,
+                                    weight: 'bold'
+                                },
+                                color: bodyText
+                            }
+                        }
+                    },
+                    plugins: {
+                        ...commonChartOptions.plugins,
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
